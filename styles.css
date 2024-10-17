@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #0eeb8f;
+}
+
+h1 {
+    text-align: center;
+}
+
+#genreFilter {
+    margin: 20px auto;
+    display: block;
+}
+
+#knightGallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.knightCard {
+    background-color: #b8a3cf;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#commentDisplay {
+    margin-top: 20px;
+}
+
+.knightCard:hover {
+    transform: scale(1.05);
+}
+
+#knightDetails {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+@media (max-width: 1200px) {
+    .knightCard {
+        width: 200px; /* Adjust width for medium screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .knightCard {
+        width: 180px; /* Slightly smaller width for smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .knightCard {
+        flex: 1 1 100%; /* Stacks cards on smaller screens */
+    }
+}

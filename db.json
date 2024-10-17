@@ -1,0 +1,86 @@
+{
+  "knights": {
+    "Historical": [
+      {
+        "id": 1,
+        "name": "William Marshal",
+        "title": "Earl of Pembroke"
+      },
+      {
+        "id": 2,
+        "name": "Richard the Lionheart",
+        "title": "King of England"
+      },
+      {
+        "id": 3,
+        "name": "El Cid",
+        "title": "Spanish Knight"
+      },
+      {
+        "id": 4,
+        "name": "Geoffrey de Charny",
+        "title": "French Knight"
+      },
+      {
+        "id": 5,
+        "name": "Baldwin IV",
+        "title": "King of Jerusalem"
+      }
+    ],
+    "Legendary": [
+      {
+        "id": 6,
+        "name": "King Arthur",
+        "title": "King of the Britons"
+      },
+      {
+        "id": 7,
+        "name": "Sir Lancelot",
+        "title": "Knight of the Round Table"
+      },
+      {
+        "id": 8,
+        "name": "Sir Gawain",
+        "title": "Knight of the Round Table"
+      },
+      {
+        "id": 9,
+        "name": "Sir Percival",
+        "title": "Knight of the Round Table"
+      },
+      {
+        "id": 10,
+        "name": "Sir Tristan",
+        "title": "Knight of the Round Table"
+      }
+    ],
+    "Fictional": [
+      {
+        "id": 11,
+        "name": "Don Quixote",
+        "title": "Knight of the Woeful Countenance"
+      },
+      {
+        "id": 12,
+        "name": "Sir Bedivere",
+        "title": "Knight of the Round Table"
+      },
+      {
+        "id": 13,
+        "name": "Galahad",
+        "title": "Knight of the Round Table"
+      },
+      {
+        "id": 14,
+        "name": "Knight Rider (KITT)",
+        "title": "Fictional Knight Vehicle"
+      },
+      {
+        "id": 15,
+        "name": "The Black Knight",
+        "title": "Fictional Character"
+      }
+    ]
+  },
+  "comments": []
+}

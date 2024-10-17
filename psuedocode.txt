@@ -1,0 +1,63 @@
+// Initialize application
+BEGIN
+
+    // Constants
+    SET API_URL = "http://localhost:3000/knights" // Local JSON server endpoint
+    SET WIKI_SEARCH_URL = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch="
+    SET WIKI_DETAIL_URL = "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=&explaintext=&titles="
+
+    // Event listeners
+    ADD event listener for "DOMContentLoaded"
+        CALL fetchKnights()
+
+    ADD event listener for genre dropdown change
+        CALL filterKnights()
+
+    ADD event listener for refresh button click
+        CALL fetchKnights()
+
+    // Function to fetch knights from local JSON server
+    FUNCTION fetchKnights()
+        ASYNC
+        SET response = await fetch(API_URL)
+        SET knights = await response.json()
+        CALL displayKnights(knights)
+
+    // Function to display knights in the gallery
+    FUNCTION displayKnights(knights)
+        CLEAR knightGallery
+        FOR EACH knight IN knights
+            CREATE knight card element
+            SET card content with knight's name and title
+            ADD click event listener for card
+                CALL showKnightDetails(knight.name) // Pass knight name to fetch details
+            APPEND card to knightGallery
+
+    // Function to filter knights based on selected criteria
+    FUNCTION filterKnights()
+        GET selectedCriteria from dropdown
+        CALL fetchKnights()
+            IF selectedCriteria IS NOT "All"
+                SET filteredKnights = knights.filter(knight WHERE knight.category == selectedCriteria)
+                CALL displayKnights(filteredKnights)
+
+    // Function to show details of a knight
+    FUNCTION showKnightDetails(knightName)
+        ASYNC
+        SET searchResponse = await fetch(WIKI_SEARCH_URL + encodeURIComponent(knightName) + "&format=json&origin=*")
+        SET searchData = await searchResponse.json()
+
+        IF searchData.query.search.length > 0
+            SET pageTitle = searchData.query.search[0].title // Get the first matching title
+            SET detailResponse = await fetch(WIKI_DETAIL_URL + encodeURIComponent(pageTitle) + "&format=json&origin=*")
+            SET detailData = await detailResponse.json()
+
+            // Extract the content from the detailData
+            SET pageContent = detailData.query.pages[Object.keys(detailData.query.pages)[0]].extract
+            DISPLAY knight's details (name, title, and extracted content)
+        ELSE
+            DISPLAY "Details not found."
+
+END
+
+

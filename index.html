@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knights Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Knights Gallery</h1>
+    <select id="genreFilter">
+        <option value="All">All</option>
+        <option value="Historical">Historical</option>
+        <option value="Legendary">Legendary</option>
+        <option value="Fictional">Fictional</option>
+    </select>
+    <div id="knightGallery"></div>
+    <div id="knightDetails"></div>
+    <button id="refreshButton">Refresh Knights</button>
+
+    <h2>Comments</h2>
+    <form id="commentForm">
+        <textarea id="commentInput" placeholder="Add your comment here..."></textarea>
+        <button id="submitComment">Submit</button>
+    </form>
+    <div id="commentsDisplay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
