@@ -40,6 +40,7 @@ This HTML code outlines the structure for a simple web page called "Knights Gall
 
 This JavaScript code is designed to handle the interactivity of the "Knights Gallery" webpage. Here’s a breakdown of its functionality and key components:
 
+
 ### 1. DOM Content Loaded Event
 ```javascript
 document.addEventListener("DOMContentLoaded", () => {
